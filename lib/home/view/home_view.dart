@@ -11,7 +11,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<HomeCubit, HomeState>(builder: (ctx, state) {
       var width = MediaQuery.of(context).size.width;
-      var singleResult = state.recipes.length == 1;
+      var singleResult = false; // state.recipes.length == 1;
       var gridCount = singleResult ? 1 : (width / 200).floor();
       var recipes = (state.recipes
           .map<Widget>((recipe) => RecipeView(
